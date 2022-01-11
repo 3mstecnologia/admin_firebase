@@ -5,21 +5,26 @@ interface AuthInputProps {
   tipo: "text" | "password" | "email";
   place: string;
   obrigatorio?: boolean;
-  valorMudou: (novoValor: any) => void;
+  naoRenderizarQuando?: boolean;
+  valorMudou?: (novoValor: any) => void;
 }
 
 export default function AuthInput(props: AuthInputProps) {
-  return (
-    <div>
+  return props.naoRenderizarQuando ? null : (
+    <div className={`flex flex-col mt-4`}>
       <label>{props.label}</label>
       <input
-        className={`flex flex-col`}
         type={props.tipo}
         value={props.valor}
         placeholder={props.place}
         name={props.nome}
         required={props.obrigatorio}
         onChange={(e) => props.valorMudou(e.target.value)}
+        className={`
+        w-full bg-gray-300 rounded-lg py-2 px-4 mt-2
+        border focus:border-blue-500 focus:bg-white
+        focus:outline-none
+      `}
       />
     </div>
   );

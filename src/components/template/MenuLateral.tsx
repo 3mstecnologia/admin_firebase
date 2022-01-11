@@ -1,6 +1,7 @@
 import MenuItem from "./MenuItem";
 import { IconeHome, IconeSair, IconeAjustes } from "../icons/index";
 import Logo from "./Logo";
+import { IconeEntrar } from "./../icons/index";
 interface MenuLateral {
   children?: any;
 }
@@ -18,7 +19,6 @@ export default function MenuLateral(props: MenuLateral) {
         flex felx-col justify-center items-center 
           bg-gradient-to-r from-indigo-600 to-blue-800
           h-20 w-20
-          
           `}
       >
         <Logo />
@@ -31,6 +31,19 @@ export default function MenuLateral(props: MenuLateral) {
       >
         <MenuItem url="/" texto="Inicio" icone={IconeHome} />
         <MenuItem url="/ajustes" texto="Ajustes" icone={IconeAjustes} />
+      </ul>
+      <ul>
+        <MenuItem
+          className={`flex felx-col justify-center items-center 
+          bg-gradient-to-r from-indigo-600 to-blue-800
+          h-20 w-20`}
+          texto="Entrar"
+          url="/login"
+          icone={IconeEntrar}
+          onClick={() => {
+            console.log("Entrar");
+          }}
+        />
       </ul>
       <ul>
         <MenuItem

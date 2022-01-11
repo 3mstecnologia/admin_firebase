@@ -1,9 +1,9 @@
 import Layout from "../components/template/Layout";
 
-export default function Home() {
+export default function Painel() {
   return (
     <Layout titulo="Pagina Inicial" subtitulo="Construindo o Template">
-      <h3>Pagina Inicial</h3>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam</h3>
     </Layout>
   );
 }
